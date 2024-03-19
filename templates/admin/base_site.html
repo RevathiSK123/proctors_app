@@ -1,0 +1,38 @@
+<!-- templates/admin/base_site.html -->
+
+{% extends "admin/base_site.html" %}
+{% load static %}
+
+{% block extrastyle %}
+    {{ block.super }}
+    <style>
+        /* Add your CSS animations here */
+        /* For example: */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .login-box {
+            animation: fadeIn 1s ease-in-out;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div class="login-box">
+        <!-- Your login form HTML code goes here -->
+        <!-- Make sure to include the necessary form fields and submit button -->
+        <h2>SJCIT LOGIN</h2>
+        <form method="post">
+            {% csrf_token %}
+            <!-- Add your form fields here -->
+            <input type="text" name="username" placeholder="Username">
+            <input type="password" name="password" placeholder="Password">
+            <button type="submit">Login</button>
+        </form>
+    </div>
+{% endblock %}

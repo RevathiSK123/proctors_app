@@ -1,0 +1,47 @@
+<!-- templates/admin/index.html -->
+
+{% extends "admin/index.html" %}
+{% load static %}
+
+{% block branding %}
+    <style>
+        @keyframes colorfulAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        #site-name {
+            background: linear-gradient(45deg, #3498db, #e74c3c, #2ecc71, #f39c12, #9b59b6, #3498db);
+            background-size: 600% 600%;
+            animation: colorfulAnimation 10s ease infinite;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            animation: changeColor 5s infinite alternate;
+        }
+
+        @keyframes changeColor {
+            0% {
+                color: #3498db;
+            }
+            25% {
+                color: #e74c3c;
+            }
+            50% {
+                color: #2ecc71;
+            }
+            75% {
+                color: #f39c12;
+            }
+            100% {
+                color: #9b59b6;
+            }
+        }
+    </style>
+    <h1 id="site-name"><a href="{% url 'admin:index' %}">S J C Institute Of Technology</a></h1>
+{% endblock %}
