@@ -1,0 +1,7 @@
+/* admin_styles.css */
+body {
+    background-image: url('/static/admin/images/college.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}

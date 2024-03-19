@@ -1,0 +1,56 @@
+<!-- admin_login.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SJCIT LOGIN</title>
+    <style>
+        /* CSS animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes colorfulAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        /* Style for the login box */
+        .login-box {
+            animation: fadeIn 1s ease-in-out;
+            /* Add other styling properties as needed */
+        }
+
+        /* Add colorful animation to body */
+        body {
+            background: linear-gradient(45deg, #ff5733, #f7b731, #ffcc5c, #f1c40f, #2ecc71, #3498db);
+            background-size: 600% 600%;
+            animation: colorfulAnimation 10s ease infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <!-- Your login form HTML code goes here -->
+        <h2>SJCIT LOGIN</h2>
+        <form method="post">
+            {% csrf_token %}
+            <!-- Add your form fields here -->
+            <input type="text" name="username" placeholder="Username">
+            <input type="password" name="password" placeholder="Password">
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>
